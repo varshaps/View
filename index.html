@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="view .css">
+
+        <title>SAVE FOOD</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div class="nav__logo">
+                    <img src="img/logo.png">
+                </div>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+
+                    <ul class="nav__list">
+						<li class="nav__item"><a href="C:\Users\Hai\Desktop\PROJECT\home\home.html" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="C:\Users\Hai\Desktop\PROJECT\AboutUs-main\about.html" class="nav__link">About Us</a></li>
+                        <li class="nav__item"><a href="C:\Users\Hai\Desktop\PROJECT\View-main\view.html" class="nav__link">View</a></li>
+                        <li class="nav__item"><a href="C:\Users\Hai\Desktop\PROJECT\contact us\contact.html" class="nav__link">Contact Us</a></li>
+                        <li class="nav__item"><a href="C:\Users\Hai\Desktop\PROJECT\Home-main\homemain.html" class="nav__link">Sign Out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home" id="home">
+                <div class="home__container bd-grid">
+                    <div class="home__img">
+                        <img src="img/img1.png" alt="" data-speed="-2" class="move">
+                        <img src="img/img2.png" alt="" data-speed="2" class="move">
+                        <img src="img/img3.png" alt="" data-speed="2" class="move">
+                        <img src="img/img4.png" alt="" data-speed="-2" class="move">
+                        <img src="img/img5.png" alt="" data-speed="-2" class="move">
+                        <img src="img/img6.png" alt="" data-speed="2" class="move">
+                    </div>
+
+                    <div class="home__data">
+                        <h1 class="home__title"></h1>
+                        <p class="home__description">
+							<center>
+								<table border="4">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<td><input type="text" placeholder="Name" name="name" id="name"></td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>Date</th>
+											<td><input type="date" name="date" id="date"></td>
+										</tr>
+										<tr>
+											<th>Food/Food Quantity/Expiry Date</th>
+											<td><input type="text" placeholder="Food"name="food" id="food"></td>
+										</tr>
+										<tr>
+											<th>Address/Phone Number</th>
+											<td><input type="address" placeholder="Address/Phone Number"name="address" id="address"></td>
+										</tr>
+										
+										
+										<tr id="btna">
+											<td colspan="2"><input type="button" name="button" id="btn" value="Add" onclick="AddRow()"></td>
+										</tr>
+									</tbody>
+								</table>
+						
+								<table border="4" id="show">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Date</th>
+											<th>Food/Food quantity/Expiry date</th>
+											<th>Address/Phone NUmber</th>
+											
+										</tr>
+									</thead>
+								</table>
+							</center>
+							
+							<script>
+								
+								var list1 = [];
+								var list2 = [];
+								var list3 = [];
+								var list4 = [];
+								
+						
+								var n = 1;
+								var x = 0;
+						
+								function AddRow(){
+						
+									var AddRown = document.getElementById('show');
+									var NewRow = AddRown.insertRow(n);
+						
+									list1[x] = document.getElementById("name").value;
+									list2[x] = document.getElementById("date").value;
+									list3[x] = document.getElementById("food").value;
+									list4[x] = document.getElementById("address").value;
+									
+									var cel1 = NewRow.insertCell(0);
+									var cel2 = NewRow.insertCell(1);
+									var cel3 = NewRow.insertCell(2);
+									var cel4 = NewRow.insertCell(3);
+									
+						
+									cel1.innerHTML = list1[x];
+									cel2.innerHTML = list2[x];
+									cel3.innerHTML = list3[x];
+									cel4.innerHTML = list4[x];
+									
+									n++;
+									x++;
+								}
+						
+							</script>
+						</p>
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--===== GSAP =====-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="js/main.js"></script>
+    </body>
+</html>
